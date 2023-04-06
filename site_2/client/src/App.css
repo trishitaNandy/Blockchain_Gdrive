@@ -45,8 +45,8 @@ body {
 }
 
 .bg {
-  animation: slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  animation: slide 4s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(204, 51, 163) 50%, rgb(83, 15, 97) 50%);
   bottom: 0;
   left: -50%;
   opacity: 0.5;
@@ -57,7 +57,7 @@ body {
 }
 
 .bg2 {
-  animation-direction: alternate-reverse;
+  animation-direction:  alternate-reverse;
   animation-duration: 4s;
 }
 
@@ -79,7 +79,8 @@ body {
 }
 
 h1 {
-  font-family: monospace;
+  /*font-family: monospace;*/
+  font-family: Segoe UI Emoji;
 }
 
 @keyframes slide {
@@ -119,14 +120,15 @@ header .overlay {
 }
 
 h1 {
-  font-family: "Dancing Script", cursive;
-  font-size: 60px;
-  margin-bottom: 30px;
+  /*font-family: "Dancing Script", cursive;*/
+  font-family: "Comic Sans MS", cursive;
+  font-size: 70px;
+  margin-bottom: 50px;
 }
 
 h3,
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Segoe UI Emoji", sans-serif;
   margin-bottom: 30px;
 }
 .share {

@@ -16,22 +16,25 @@ const FileUpload=({contract, account, provider })=>{
                     url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
                     data: formData,
                     headers: {
-                      pinata_api_key: `7142d9f1654ede9fe093`,
-                      pinata_secret_api_key: `22b90d39378522ccb9cd564648a9706c104cad361e55df6a55567836b4933adf`,
+                      pinata_api_key: `cd7a3885fbb7e6e18f23`,
+                      pinata_secret_api_key: `08a83f8576b3ab50bae86a0420bf1163ee805e2a1baadbd3284632b4254c5326`,
                       "Content-Type": "multipart/form-data",
                     },
                   });
+                  //const ImgHash=  `https://gateway.pinata.cloud/ipfs/${resFile.data.IpfsHash}`;
                   const ImgHash= `ipfs://${resFile.data.IpfsHash}`;
                   //const signer= contract.connect(provider.getSigner());
                   contract.add(account,ImgHash);
                   alert("successfully Image Uploaded");
                   setFileName("No image selected");
                   setFile(null);
-
             }catch(e){
                 alert("Unable to upload image to Pinata");
             }
         }
+        alert("Successfully Image Uploaded");
+        setFileName("No image selected");
+        setFile(null);
     };
     const retrieveFile=(e)=>{
         const data= e.target.files[0]; //array of files object
@@ -44,7 +47,8 @@ const FileUpload=({contract, account, provider })=>{
         setFileName(e.target.files[0].name);
         e.preventDefault();
     };
-    return <div className="top">
+    return (
+        <div className="top">
         <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="file-upload" className="choose">
                 Choose Image
@@ -57,9 +61,11 @@ const FileUpload=({contract, account, provider })=>{
                 onChange={retrieveFile}
             />
             <span className="textArea">Image: {fileName}</span>
-            <button type="submit" className="upload" disabled={!file}>Upload file</button>
+            <button type="submit" className="upload" disabled={!file}>
+                Upload file
+            </button>
         </form>
-
     </div>
+    );
 };
 export default FileUpload;
